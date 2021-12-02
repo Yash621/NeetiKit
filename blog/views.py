@@ -19,11 +19,20 @@ class PostListView(ListView):
     ordering = ['-date_posted']
 
 
-class PostDetailView(DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'current']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class PostUpdateView(LoginRequiredMixin, updateView):
     model = Post
     fields = ['title', 'current']
 
