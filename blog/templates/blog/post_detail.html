@@ -6,6 +6,18 @@
         >{{ object.author }}</a
       >
       <small class="text-muted">{{ object.date_posted | date:"F d,Y" }}</small>
+      {% if object.author ==user %}
+      <a
+        class="btn btn-sm btn-secondary mt-1 mb-1"
+        href="{% url 'post-update' object.id %}"
+        >Edit</a
+      >
+      <a
+        class="btn btn-sm btn-danger mt-1 mb-1"
+        href="{% url 'post-delete' object.id %}"
+        >Delete</a
+      >
+      {% endif %}
     </div>
     <h2 class="article-title">{{ object.title }}</h2>
     <p class="article-content">{{ object.current }}</p>
