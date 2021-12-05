@@ -20,7 +20,7 @@ class PostListView(ListView):
     paginate_by = 2
 
 
-class PostDetailView(LoginRequiredMixin, DetailView):
+class PostDetailView(DetailView):
     model = Post
 
 
