@@ -87,11 +87,9 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
 .nav_bar {
-  background-color: black;
-}
-.nav_bar {
-  background-color: black;
+  background-color: #101927;
 }
 .logo {
   width: 70px;
