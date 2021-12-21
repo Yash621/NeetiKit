@@ -1,4 +1,10 @@
 {% extends "blog/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<style>
+  .content-section {
+    margin-top: 30px;
+    background-color: #e4e4e3;
+  }
+</style>
 <div class="content-section">
   <div class="media">
     <img class="rounded-circle account-img" src="{{user.profile.image.url}}" />

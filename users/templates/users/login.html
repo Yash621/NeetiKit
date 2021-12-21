@@ -1,4 +1,10 @@
 {% extends "blog/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<style>
+  .content-section {
+    margin-top: 50px;
+    background-color: #e4e4e3;
+  }
+</style>
 <div class="content-section">
   <form method="POST">
     {% csrf_token %}
