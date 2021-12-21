@@ -19,6 +19,8 @@ from users import views as user_views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from blog import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name="register"),
@@ -34,6 +36,7 @@ urlpatterns = [
         template_name="users/password_reset_confirm.html"), name="password_reset_confirm"),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
         template_name="users/password_reset_complete.html"), name="password_reset_complete"),
+    path('', views.landing, name="blog-landing"),
 ]
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL,
