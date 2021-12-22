@@ -4,6 +4,12 @@
     background-color: #e4e4e3;
     margin-top: 30px;
   }
+  .author-link {
+    text-decoration: none;
+  }
+  .article-title {
+    text-decoration: none;
+  }
 </style>
 <article class="media content-section">
   <img
@@ -13,7 +19,9 @@
   <div class="media-body">
     <div class="article-metadata">
       <!-- bug fixes -->
-      <a class="mr-2" href="{% url 'user-posts' post.author.username %}"
+      <a
+        class="mr-2 author-link"
+        href="{% url 'user-posts' post.author.username %}"
         >{{ post.author }}</a
       >
       <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
@@ -23,7 +31,7 @@
         >{{ post.title }}</a
       >
     </h2>
-    <p class="article-content">{{ post.content }}</p>
+    <p class="article-content">{{ post.current }}</p>
   </div>
 </article>
 {% endfor %} {% if is_paginated %} {% if page_obj.has_previous %}
