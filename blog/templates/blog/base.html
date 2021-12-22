@@ -42,6 +42,12 @@
       margin-top: 35%;
       margin-left: 20px;
     }
+    @media only screen and (max-width: 1200px) {
+     .neetikit_graphic {
+      height: 160px;
+      width: auto;
+  }
+}
   </style>
   <body enctype="multipart/form-data">
     <header class="site-header">
@@ -97,11 +103,13 @@
           {% endfor %} {% endif %} {% block content %}{% endblock %}
         </div>
         <div class="col-md-4">
-          <img
+        
+            <img
             src="../../../../media/neetikit_graphic.png"
             alt="welcome to Neetikit"
             class="neetikit_graphic"
           />
+         
         </div>
       </div>
     </main>
