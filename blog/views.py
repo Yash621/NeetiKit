@@ -36,7 +36,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class UserPostListView(ListView):
     model = Post
-    template_name = 'blog/user_post.html'
+    template_name = 'blog/user_posts.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5

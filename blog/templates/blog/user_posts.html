@@ -3,8 +3,11 @@
   .article-title {
     text-decoration: none !important;
   }
+  .user-title {
+    margin-top: 20px;
+  }
 </style>
-<h1 class="mb-3">
+<h1 class="mb-3 user-title">
   Posts by {{view.kwargs.username}}({{page_obj.paginator.count}})
 </h1>
 {% for post in posts %}
